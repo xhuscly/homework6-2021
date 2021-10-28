@@ -1,0 +1,115 @@
+body{
+    font-family: 'Alegreya Sans SC', serif;
+    background: url("../images/concrete_seamless.png") #f1f1f1;
+}
+body >header,.nav_links{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+a:link,a:visited{
+    color:blue;
+}
+.card header{
+    background:#288088;
+    border:2px solid #45ADAD;
+    padding-top:20px;
+    padding-bottom: 20px;
+    border-radius: 7px 7px 0 0;
+}
+.pricing{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+.card{
+    display:flex;
+    flex-basis:450px;
+    flex-direction:column;
+}
+.gallery img{
+    border:10px solid #50C7C7;
+    margin:10px 10px 10px 10px;
+    width:300px;
+}
+.gallery{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+#logo{
+    animation-name: mymove;
+    animation-duration: 5s;
+}
+@keyframes mymove{
+    from {width:50px; 
+        opacity: 0;}
+    to {width:425px; 
+        opacity: 1}  
+}
+
+
+@media screen and (min-width: 850px){
+  body>header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position:sticky;
+    top:0;
+    width:100%;
+ }
+  .nav_links{
+    flex-direction:row;
+    justify-content: flex-end;
+ }
+  .card{
+    flex-basis: 250px;
+    display: flex;
+    flex-direction: column;
+}
+ .card>header{
+     display: flex;
+     justify-content:flex-start;
+ }
+}
+@media screen and (prefers-reduced-motion:reduce){
+    #logo{
+        animation:none;
+    }
+}
+@media print{
+    body{
+        display:flex;
+        flex-direction: column;
+        background-image:none;
+   }
+   .pricing{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items:flex-end;
+   }
+   
+   .gallery, #gallery{
+       display:none;
+   }
+   .nav_links{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+   }
+   nav{
+       width:100%;
+   }
+   .card{
+    display: flex;
+    border:2px solid #45ADDD;
+    flex-basis:250px;
+    }
+   .card> ul li:nth-child(odd):before{
+       content: '\1F44D';
+   }
+   .card> ul li:nth-child(even):after{
+       content: '\1F44D';
+   }
+}
