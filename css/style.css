@@ -57,6 +57,7 @@ a:link,a:visited{
     justify-content: space-between;
     position:sticky;
     top:0;
+    left:0;
     width:100%;
  }
   .nav_links{
